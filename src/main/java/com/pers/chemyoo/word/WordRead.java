@@ -131,12 +131,12 @@ public class WordRead
  		        	FileUtils.writeStringToFile(file, sb.toString(), true);
  		        	index ++;
  		        }
+ 		        f.delete();
 			}
 			else
 			{
 				System.out.println("此文件不是word文件！");
 			}
-
 		}
 		catch (Exception e)
 		{
