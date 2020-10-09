@@ -26,7 +26,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 /**
- * 将Excel文件中的sheet页签内容进行替换
+ * 读取Excel文件，支持多表头读取
  * 
  * @author chemyoo
  */
