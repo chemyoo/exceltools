@@ -140,7 +140,7 @@ public class ExcelUtils {
 		fileChooser.setDialogTitle("请选择源文件夹");
 		fileChooser.setApproveButtonText("确定");
 		//只选择文件夹
-		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		//设置文件是否可多选
 		fileChooser.setMultiSelectionEnabled(false);
 		fileChooser.setAcceptAllFileFilterUsed(false);// 去掉显示所有文件的按钮
