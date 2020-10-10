@@ -144,6 +144,10 @@ public class ExcelUtils
 		{
 			Workbook book = WorkbookFactory.create(is);
 			Sheet sheet = book.getSheetAt(config.getSheetIndex());
+			if (!sheet.getSheetName().equalsIgnoreCase(config.getSheetName()))
+			{
+				sheet = book.getSheet(config.getSheetName());
+			}
 			return read2ExcelModel(sheet, config);
 		}
 		catch (InvalidFormatException | IOException e)
