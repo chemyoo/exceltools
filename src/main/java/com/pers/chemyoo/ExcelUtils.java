@@ -314,7 +314,6 @@ public class ExcelUtils
 		{
 			return EMPTY;
 		}
-		DataFormatter dataFormatter = new DataFormatter();
 		String cellValue = null;
 		if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC)
 		{
@@ -325,7 +324,7 @@ public class ExcelUtils
 			}
 			else
 			{
-				cellValue = dataFormatter.formatCellValue(cell);
+				cellValue = new DataFormatter().formatCellValue(cell);
 //				String.valueOf(cell.getNumericCellValue()); // 数字
 			}
 		}
