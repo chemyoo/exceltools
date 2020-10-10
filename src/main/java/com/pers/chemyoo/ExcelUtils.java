@@ -1,5 +1,6 @@
 package com.pers.chemyoo;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
@@ -76,7 +78,6 @@ public class ExcelUtils
 		if (config.isHasHead())
 		{
 			model.setHeads(getHeads(sheet, config));
-			start++;
 		}
 		int headLength = model.getHeads().size();
 		for (; start <= end; start++)
@@ -337,6 +338,30 @@ public class ExcelUtils
 			cellValue = String.valueOf(cell.getStringCellValue());
 		}
 		return cellValue;
+	}
+	
+	public static void main(String[] args) throws IOException
+	{
+		File file = com.pers.chemyoo.exceltools.ExcelUtils.getFile();
+		ExcelConfig[] configs = new ExcelConfig[2];
+		ExcelConfig config = new ExcelConfig();
+		config.setAliasName("哈哈哈哈");
+		config.setHasHead(true);
+		config.setSheetIndex(6);
+		config.setSheetName("变电站建筑工程费用汇总表");
+		config.setStartRow(5);
+		config.setHeadStart(3);
+		config.setHeadEnd(4);
+		configs[0] = config;
+		config = new ExcelConfig();
+		config.setHasHead(true);
+		config.setSheetIndex(7);
+		config.setSheetName("建筑分部分项工程量清单计价表");
+		config.setStartRow(7);
+		config.setHeadStart(3);
+		config.setHeadEnd(6);
+		configs[1] = config;
+		System.err.println(ExcelUtils.read2ExcelModel(FileUtils.openInputStream(file), configs));
 	}
 
 }
