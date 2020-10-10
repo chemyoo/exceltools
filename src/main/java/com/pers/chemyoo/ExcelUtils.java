@@ -118,6 +118,10 @@ public class ExcelUtils
 			for (ExcelConfig config : configs)
 			{
 				Sheet sheet = book.getSheetAt(config.getSheetIndex());
+				if (!sheet.getSheetName().equalsIgnoreCase(config.getSheetName()))
+				{
+					sheet = book.getSheet(config.getSheetName());
+				}
 				map.put(config.getSheetName(), read2ExcelModel(sheet, config));
 			}
 		}
@@ -222,6 +226,7 @@ public class ExcelUtils
 
 	/**
 	 * 合并表头
+	 * 
 	 * @param headRows
 	 * @return
 	 */
@@ -237,9 +242,10 @@ public class ExcelUtils
 				for (Map<Integer, String> hr : headRows)
 				{
 					String v = hr.get(i);
-					if(v != null && titleBuider.length() == 0) {
+					if (v != null && titleBuider.length() == 0)
+					{
 						titleBuider.append(v);
-					} 
+					}
 					else if (v != null && !titleBuider.toString().endsWith(v))
 					{
 						titleBuider.append(".").append(v);

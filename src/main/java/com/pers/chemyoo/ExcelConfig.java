@@ -1,8 +1,15 @@
 package com.pers.chemyoo;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class ExcelConfig
 {
 	private String sheetName;
+
+	/**
+	 * sheet页签别名
+	 */
+	private String aliasName;
 
 	private int startRow;
 
@@ -18,6 +25,10 @@ public class ExcelConfig
 
 	public String getSheetName()
 	{
+		if (StringUtils.isNotBlank(aliasName))
+		{
+			return aliasName;
+		}
 		return sheetName;
 	}
 
@@ -84,6 +95,16 @@ public class ExcelConfig
 	public void setHeadEnd(int headEnd)
 	{
 		this.headEnd = headEnd;
+	}
+
+	public String getAliasName()
+	{
+		return aliasName;
+	}
+
+	public void setAliasName(String aliasName)
+	{
+		this.aliasName = aliasName;
 	}
 
 }
