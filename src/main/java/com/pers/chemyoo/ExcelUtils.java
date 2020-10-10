@@ -122,7 +122,7 @@ public class ExcelUtils
 				{
 					sheet = book.getSheet(config.getSheetName());
 				}
-				map.put(config.getSheetName(), read2ExcelModel(sheet, config));
+				map.put(config.getAliasName(), read2ExcelModel(sheet, config));
 			}
 		}
 		catch (InvalidFormatException | IOException e)

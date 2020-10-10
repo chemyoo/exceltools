@@ -25,10 +25,6 @@ public class ExcelConfig
 
 	public String getSheetName()
 	{
-		if (StringUtils.isNotBlank(aliasName))
-		{
-			return aliasName;
-		}
 		return sheetName;
 	}
 
@@ -97,9 +93,17 @@ public class ExcelConfig
 		this.headEnd = headEnd;
 	}
 
+	/**
+	 * 如果aliasName为空，则取sheetName。
+	 * @return
+	 */
 	public String getAliasName()
 	{
-		return aliasName;
+		if (StringUtils.isNotBlank(aliasName))
+		{
+			return aliasName;
+		}
+		return sheetName;
 	}
 
 	public void setAliasName(String aliasName)
