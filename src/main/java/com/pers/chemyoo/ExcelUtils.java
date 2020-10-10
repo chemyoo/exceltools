@@ -118,7 +118,8 @@ public class ExcelUtils
 			Workbook book = WorkbookFactory.create(is);
 			for (ExcelConfig config : configs)
 			{
-				Sheet sheet = book.getSheetAt(config.getSheetIndex());
+				int sheetNumber = book.getNumberOfSheets();
+				Sheet sheet = book.getSheetAt(config.getSheetIndex() >= sheetNumber ? sheetNumber - 1 : config.getSheetIndex());
 				if (!sheet.getSheetName().equalsIgnoreCase(config.getSheetName()))
 				{
 					sheet = book.getSheet(config.getSheetName());
