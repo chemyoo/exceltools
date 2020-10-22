@@ -20,7 +20,6 @@ import javax.swing.filechooser.FileSystemView;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -140,7 +139,7 @@ public class ExcelUtils {
 		fileChooser.setDialogTitle("请选择源文件夹");
 		fileChooser.setApproveButtonText("确定");
 		//只选择文件夹
-		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		//设置文件是否可多选
 		fileChooser.setMultiSelectionEnabled(false);
 		fileChooser.setAcceptAllFileFilterUsed(false);// 去掉显示所有文件的按钮
@@ -359,9 +358,9 @@ public class ExcelUtils {
 					Cell rCell = entry.getValue();
 					if(cell == null) {
 						cell = row.createCell(entry.getKey());
-						CellStyle style = book.createCellStyle();
-						style.cloneStyleFrom(rCell.getCellStyle());
-						cell.setCellStyle(style);
+//						CellStyle style = book.createCellStyle();
+//						style.cloneStyleFrom(rCell.getCellStyle());
+//						cell.setCellStyle(style);
 					}
 					if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 						cell.setCellValue(rCell.getNumericCellValue());
