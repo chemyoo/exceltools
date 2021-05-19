@@ -67,6 +67,18 @@
 			<artifactId>guava</artifactId>
 			<version>22.0</version>
 		</dependency>
+		
+		<!-- jxls -->
+		<dependency>
+			<groupId>net.sf.jxls</groupId>
+			<artifactId>jxls-core</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jxls</groupId>
+			<artifactId>jxls-jexcel</artifactId>
+			<version>[1.0.8,)</version>
+		</dependency>
 
 	</dependencies>
 </project>

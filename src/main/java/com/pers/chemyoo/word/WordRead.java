@@ -27,7 +27,7 @@ public class WordRead
 	{
 		WordRead tp = new WordRead();
 		// .docx和doc文件的读取
-		tp.readWord("C:\\Users\\chemyoo\\Desktop\\湖南电力\\数据库\\QR731801008湖南省电力质监信息化数据持久化设计说明书(BWX19191_V1.0.0__LJQ_2020.02.11).docx");
+		tp.readWord("C:\\Users\\chemyoo\\Desktop\\江苏送变电\\QR731802003数据持久化设计说明书(项目编号_项目版本号_编写者拼音首字母_配置项创建日期).doc");
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class WordRead
 //		            }else if ("2".equals(style)) {  
 //		              System.out.println(text+"--["+style+"]");  
 //		            }else 
-		            if ("3".equals(style) && text.startsWith("HNDLZJ_")) {  
+		            if ("3".equals(style) && text.startsWith("表格TBL_")) {  
 		              list.add(text);   
 		            }else{  
 		                continue;  
