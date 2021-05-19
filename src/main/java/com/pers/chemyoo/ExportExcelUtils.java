@@ -58,6 +58,17 @@ public class ExportExcelUtils
 //    Workbook workbook = transformer.transformMultipleSheetsList(is,results,monthNames, "results",new HashMap(),1); 
 //
 //
+
+//	payslipMaps = resultList.subList(i*200,k);   
+//	  
+//    for (int j=0;j < payslipMaps.size(); j++) {
+//         Map payslip = (Map)resultList.get(i);   
+//         String sheetName = paysli.get("EMPLOYEE_ID");   
+//         sheetNames.add(sheetName);   
+//    }   
+//       
+//    HSSFWorkbook workBook = transformer.transformMultipleSheetsList(is , payslipMaps , sheetNames, "map", new HashMap(), 0);  
+
 //    public Workbook transformMultipleSheetsList(InputStream is, List objects, List newSheetNames, String beanName, Map beanParams, int startSheetNum) throws ParsePropertyException
 //    该方法里面的参数说明如下：
 //    1）is：即Template文件的一个输入流
